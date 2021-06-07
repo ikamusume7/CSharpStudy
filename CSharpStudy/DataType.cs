@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -66,8 +67,26 @@ namespace CSharpStudy
             bool isDr = lastName.StartsWith("Dr.");
             _testOutputHelper.WriteLine(isPhd.ToString());
             _testOutputHelper.WriteLine(isDr.ToString());
-            
-            
+
+            string severity = "warning";
+            _testOutputHelper.WriteLine(severity.ToUpper());
+            _testOutputHelper.WriteLine(severity.ToLower());
+
+            string username = "";
+            _testOutputHelper.WriteLine(username.Trim());
+            _testOutputHelper.WriteLine(username.TrimStart());
+            _testOutputHelper.WriteLine(username.TrimEnd());
+
+            string filename = "";
+            _testOutputHelper.WriteLine(filename.Replace("?", ""));
+
+            _testOutputHelper.WriteLine(Environment.NewLine);
+
+            string palindrome;
+            _testOutputHelper.WriteLine("Enter a palindrome");
+            palindrome = Console.ReadLine();
+            Debug.Assert(palindrome != null, nameof(palindrome) + " != null");
+            _testOutputHelper.WriteLine($"The palindrome, \"{palindrome}\" is {palindrome.Length} characters.");
         }
     }
 }
