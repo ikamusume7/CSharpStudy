@@ -1,0 +1,9 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=56086b40_002De49d_002D42d1_002Da6b7_002Dcb600b75f3b6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="HelloWorld" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::BF9A745F-9010-4197-9EE4-FD4AB850A2FB::net5.0::CSharpStudy.Program.HelloWorld&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::BF9A745F-9010-4197-9EE4-FD4AB850A2FB::net5.0::CSharpStudy.Program.ReadLine&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::BF9A745F-9010-4197-9EE4-FD4AB850A2FB::net5.0::CSharpStudy.DataType.RoundTrip&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::BF9A745F-9010-4197-9EE4-FD4AB850A2FB::net5.0::CSharpStudy.DataType.String&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
