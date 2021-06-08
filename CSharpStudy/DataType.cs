@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Text;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -87,6 +88,164 @@ namespace CSharpStudy
             palindrome = Console.ReadLine();
             Debug.Assert(palindrome != null, nameof(palindrome) + " != null");
             _testOutputHelper.WriteLine($"The palindrome, \"{palindrome}\" is {palindrome.Length} characters.");
+
+            StringBuilder sb = new StringBuilder(10);
+            sb.Append("");
+            sb.Append("");
+            _testOutputHelper.WriteLine(sb.ToString());
+
+        }
+
+        [Fact]
+        public void Var()
+        {
+            var text = Console.ReadLine();
+            var uppercase = text?.ToUpper();
+            _testOutputHelper.WriteLine(uppercase);
+
+            var patent1 = new {Title = "Bifocals", YearOfPublication = "1784"};
+            var patent2 = new {Title = "Phonograph", YearOfPublication = "1877"};
+            _testOutputHelper.WriteLine($"{patent1.Title} ({patent1.YearOfPublication})");
+            _testOutputHelper.WriteLine($"{patent2.Title} ({patent2.YearOfPublication})");
+        }
+
+        [Fact]
+        public void Checked()
+        {
+            checked
+            {
+                // int.MaxValue equals 2147483647
+                int n = int.MaxValue;
+                n = n + 1;
+                _testOutputHelper.WriteLine(n.ToString());
+            }
+        }
+
+        [Fact]
+        public void UnChecked()
+        {
+            unchecked
+            {
+                // int.MaxValue equals 2147483647
+                int n = int.MaxValue;
+                n = n + 1;
+                _testOutputHelper.WriteLine(n.ToString());
+            }
+        }
+
+        [Fact]
+        public void Convert()
+        {
+            int intNumber = 31416;
+            long longNumber = intNumber;
+            _testOutputHelper.WriteLine(longNumber.ToString());
+            
+            longNumber = (long) intNumber;
+            _testOutputHelper.WriteLine(longNumber.ToString());
+
+            string text = "9.11E-31";
+            float kgElectronMass = float.Parse(text);
+            _testOutputHelper.WriteLine(longNumber.ToString());
+
+            string middleCText = "261.626";
+            double middleC = System.Convert.ToDouble(middleCText);
+            _testOutputHelper.WriteLine(middleC.ToString());
+            bool boolean = System.Convert.ToBoolean(middleC);
+            _testOutputHelper.WriteLine(boolean.ToString());
+
+            text = boolean.ToString();
+            _testOutputHelper.WriteLine(text);
+
+            double number;
+            string input;
+            input = Console.ReadLine();
+            if (double.TryParse(input, out number))
+            {
+                // 转换成功
+            }
+            else
+            {
+                // 转换失败
+            }
+        }
+
+        [Fact]
+        public void Array()
+        {
+            string[] languages =
+            {
+                "C#", "COBOL", "Java", "C++", "Visual Basic", "Pascal",
+                "Fortran", "Lisp", "J#"
+            };
+            languages = new string[9];
+            languages = new[]
+            {
+                "C#", "COBOL", "Java", "C++", "Visual Basic", "Pascal",
+                "Fortran", "Lisp", "J#"
+            };
+            
+            int[,] cells = new int[3, 3];
+            cells = new int[,]
+            {
+                {1, 0, 2},
+                {1, 2, 0},
+                {1, 2, 1}
+            };
+
+            int count = default(int);
+
+            string language = languages[3];
+            languages[3] = languages[2];
+            languages[2] = language;
+            
+            _testOutputHelper.WriteLine($"There are {languages.Length} " +
+                                        $"languages in the array.");
+            
+            System.Array.Sort(languages);
+
+            string searchString = "COBOL";
+            int index = System.Array.BinarySearch(languages, searchString);
+            _testOutputHelper.WriteLine($"The wave of the future, {searchString}, " +
+                                        $"is at index {index}.");
+            _testOutputHelper.WriteLine("");
+            _testOutputHelper.WriteLine("{0,-20}\t{1,-20}", "First Element", "Last Element");
+            _testOutputHelper.WriteLine("{0,-20}\t{1,-20}", "-------------", "------------");
+            _testOutputHelper.WriteLine("{0,-20}\t{1,-20}", languages[0], languages[^1]);
+            System.Array.Reverse(languages);
+            _testOutputHelper.WriteLine("{0,-20}\t{1,-20}", languages[0], languages[^1]);
+            System.Array.Clear(languages, 0, languages.Length);
+            _testOutputHelper.WriteLine("{0,-20}\t{1,-20}", languages[0], languages[^1]);
+            _testOutputHelper.WriteLine("After clearing, the array size is: {0}", languages.Length);
+
+            bool[,,] newCells = new bool[2, 3, 3];
+            _testOutputHelper.WriteLine(newCells.GetLength(0).ToString());
+            _testOutputHelper.WriteLine(newCells.Rank.ToString());
+            _testOutputHelper.WriteLine(newCells.Clone().ToString());
+        }
+
+        [Fact]
+        public void StringReverse()
+        {
+            string reverse, palindrome;
+            char[] temp;
+            
+            _testOutputHelper.WriteLine("Enter a palindrome: ");
+            palindrome = Console.ReadLine();
+
+            reverse = palindrome?.Replace(" ", "");
+            reverse = reverse?.ToLower();
+
+            temp = reverse?.ToCharArray();
+            System.Array.Reverse(temp ?? System.Array.Empty<char>());
+
+            if (reverse == new string(temp))
+            {
+                _testOutputHelper.WriteLine("\"{0}\" is a palindrome.", palindrome);
+            }
+            else
+            {
+                _testOutputHelper.WriteLine("\"{0}\" is NOT a palindrome.", palindrome);
+            }
         }
     }
 }
