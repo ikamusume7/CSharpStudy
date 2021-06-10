@@ -16,13 +16,13 @@ namespace CSharpStudy
         }
 
         [Fact]
-        public void Basic()
+        public void BasicDemo()
         {
             
         }
 
         [Fact]
-        public void RoundTrip()
+        public void RoundTripDemo()
         {
             const double number = 1.618033988749895;
             double result;
@@ -36,7 +36,7 @@ namespace CSharpStudy
         }
 
         [Fact]
-        public void String()
+        public void StringDemo()
         {
             _testOutputHelper.WriteLine("\"Truly, you have a dizzying intellect.\"");
             _testOutputHelper.WriteLine("\n\"Wait 'til I get going!\"\n");
@@ -97,7 +97,7 @@ namespace CSharpStudy
         }
 
         [Fact]
-        public void Var()
+        public void VarDemo()
         {
             var text = Console.ReadLine();
             var uppercase = text?.ToUpper();
@@ -110,7 +110,7 @@ namespace CSharpStudy
         }
 
         [Fact]
-        public void Checked()
+        public void CheckedDemo()
         {
             checked
             {
@@ -122,7 +122,7 @@ namespace CSharpStudy
         }
 
         [Fact]
-        public void UnChecked()
+        public void UnCheckedDemo()
         {
             unchecked
             {
@@ -134,7 +134,7 @@ namespace CSharpStudy
         }
 
         [Fact]
-        public void Convert()
+        public void ConvertDemo()
         {
             int intNumber = 31416;
             long longNumber = intNumber;
@@ -148,9 +148,9 @@ namespace CSharpStudy
             _testOutputHelper.WriteLine(longNumber.ToString());
 
             string middleCText = "261.626";
-            double middleC = System.Convert.ToDouble(middleCText);
+            double middleC = Convert.ToDouble(middleCText);
             _testOutputHelper.WriteLine(middleC.ToString());
-            bool boolean = System.Convert.ToBoolean(middleC);
+            bool boolean = Convert.ToBoolean(middleC);
             _testOutputHelper.WriteLine(boolean.ToString());
 
             text = boolean.ToString();
@@ -170,7 +170,7 @@ namespace CSharpStudy
         }
 
         [Fact]
-        public void Array()
+        public void ArrayDemo()
         {
             string[] languages =
             {
@@ -201,19 +201,19 @@ namespace CSharpStudy
             _testOutputHelper.WriteLine($"There are {languages.Length} " +
                                         $"languages in the array.");
             
-            System.Array.Sort(languages);
+            Array.Sort(languages);
 
             string searchString = "COBOL";
-            int index = System.Array.BinarySearch(languages, searchString);
+            int index = Array.BinarySearch(languages, searchString);
             _testOutputHelper.WriteLine($"The wave of the future, {searchString}, " +
                                         $"is at index {index}.");
             _testOutputHelper.WriteLine("");
             _testOutputHelper.WriteLine("{0,-20}\t{1,-20}", "First Element", "Last Element");
             _testOutputHelper.WriteLine("{0,-20}\t{1,-20}", "-------------", "------------");
             _testOutputHelper.WriteLine("{0,-20}\t{1,-20}", languages[0], languages[^1]);
-            System.Array.Reverse(languages);
+            Array.Reverse(languages);
             _testOutputHelper.WriteLine("{0,-20}\t{1,-20}", languages[0], languages[^1]);
-            System.Array.Clear(languages, 0, languages.Length);
+            Array.Clear(languages, 0, languages.Length);
             _testOutputHelper.WriteLine("{0,-20}\t{1,-20}", languages[0], languages[^1]);
             _testOutputHelper.WriteLine("After clearing, the array size is: {0}", languages.Length);
 
@@ -224,7 +224,7 @@ namespace CSharpStudy
         }
 
         [Fact]
-        public void StringReverse()
+        public void StringReverseDemo()
         {
             string reverse, palindrome;
             char[] temp;
@@ -236,7 +236,7 @@ namespace CSharpStudy
             reverse = reverse?.ToLower();
 
             temp = reverse?.ToCharArray();
-            System.Array.Reverse(temp ?? System.Array.Empty<char>());
+            Array.Reverse(temp ?? Array.Empty<char>());
 
             if (reverse == new string(temp))
             {
