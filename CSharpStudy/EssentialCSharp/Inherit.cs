@@ -3,7 +3,7 @@ using System.IO;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace CSharpStudy
+namespace EssentialCSharp
 {
     public class Inherit
     {

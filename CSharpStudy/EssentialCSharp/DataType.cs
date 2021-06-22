@@ -4,7 +4,7 @@ using System.Text;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace CSharpStudy
+namespace EssentialCSharp
 {
     public class DataType
     {

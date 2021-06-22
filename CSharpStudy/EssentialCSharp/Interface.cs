@@ -2,7 +2,7 @@
 using Xunit;
 using Xunit.Abstractions;
 
-namespace CSharpStudy.Interface
+namespace EssentialCSharp.Interface
 {
     public class Interface
     {

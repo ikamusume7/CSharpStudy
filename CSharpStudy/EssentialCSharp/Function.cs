@@ -6,7 +6,7 @@ using System.Threading;
 using CountDownTimer = System.Timers.Timer;
 using Timer = System.Timers.Timer;
 
-namespace CSharpStudy
+namespace EssentialCSharp
 {
     public class Function
     {

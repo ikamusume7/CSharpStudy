@@ -3,7 +3,7 @@ using System.Collections;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace CSharpStudy
+namespace EssentialCSharp
 {
     public class ValueType
     {
